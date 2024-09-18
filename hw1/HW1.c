@@ -3,7 +3,7 @@ Name:  Ali Takallou
 Email: atakallou@crimson.ua.edu
 Course Section: CS 581
 Homework #:1
-Instructions to compile the program: gcc -o HW1 HW1.c
+Instructions to compile the program: icx -O3 -o HW1 HW1.c
 Instructions to run the program: HW1 <number of Rows> <number of Columns> <maxmium number of Generations>
 */
 
