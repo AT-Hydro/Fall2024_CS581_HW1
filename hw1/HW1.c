@@ -87,16 +87,18 @@ void free_matrix(int **matrix, int rows) {
 }
 
 // Main function
-int main() {
-    int rows, cols;
+int main(int argc, char *argv[]) {
+	
+    // Check if exactly three arguments are passed (program name + 3 arguments)
+    if (argc != 4) {
+        printf("Usage: %s <rows> <cols> <n_generations>\n", argv[0]);
+        return 1;  // Exit with error code
+    }
 
-    // Get user input for rows and cols
-    printf("Enter the number of rows: ");
-    scanf("%d", &rows);
-    printf("Enter the number of columns: ");
-    scanf("%d", &cols);
-
-    // Adjust for border padding
+    int rows = atoi(argv[1]);
+    int cols = atoi(argv[2]);
+    int n_generations = atoi(argv[3]);
+	// Adjust for border padding (for game logic)
     rows += 2;
     cols += 2;
     
@@ -119,10 +121,8 @@ int main() {
 
     //printf("Initial Matrix:\n");
     //print_matrix(rows, cols, matrix); 
-    // Get user input for maximum number of generations
-    int n_generations; 
-    printf("Enter the maximum number of generations: ");
-    scanf("%d", &n_generations);
+    // Get user input for maximum number of generations 
+
 
     clock_t start_time = clock();
     int flag = 0;
